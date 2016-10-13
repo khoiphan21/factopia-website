@@ -1,5 +1,5 @@
 <ul *ngIf="headlinesList">
-  <li *ngFor="let headline of headlinesList">
+  <li *ngFor="let headline of headlinesList" (click)="onSelectHeadline(headline)">
     {{headline.title}}
   </li>
 </ul>

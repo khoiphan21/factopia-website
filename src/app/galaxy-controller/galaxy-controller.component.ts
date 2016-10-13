@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { HeadlineService } from '../headline.service';
 import { Headline } from '../shared/headline';
 
@@ -26,7 +26,6 @@ export class GalaxyControllerComponent implements OnInit {
     this.getHeadlines();
     this.friendsList = null;
   }
-
   onSelectFriends() {
     this.friendsList = FRIENDS;
     this.headlinesList = null;

@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Headline } from '../shared/headline';
+import { HeadlineService } from '../headline.service';
 
 
 @Component({
@@ -7,6 +9,11 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./galaxy-controller-detail.component.css']
 })
 export class GalaxyControllerDetailComponent implements OnInit {
+  // Services
+  private headlineService: HeadlineService;
+
+  // Class variables
+  private selectedHeadline: Headline;
 
   @Input()
   headlinesList;
@@ -14,7 +21,18 @@ export class GalaxyControllerDetailComponent implements OnInit {
   @Input()
   friendsList;
 
-  constructor() { }
+  // This is called when a headline is selected
+  onSelectHeadline(headline: Headline) {
+    this.selectedHeadline = headline;
+
+    // Announce the change in headline selected
+    this.headlineService.annouceHeadlineSelected(headline);
+  }
+
+  constructor(headlineService: HeadlineService) {
+    this.headlineService = headlineService;
+   }
+
 
   ngOnInit() {
   }
