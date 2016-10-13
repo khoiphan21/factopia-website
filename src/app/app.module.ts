@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { MainHeaderComponent } from './main-header/main-header.component';
+import { GalaxyDisplayComponent } from './galaxy-display/galaxy-display.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainHeaderComponent
+    MainHeaderComponent,
+    GalaxyDisplayComponent
   ],
   imports: [
     BrowserModule,
