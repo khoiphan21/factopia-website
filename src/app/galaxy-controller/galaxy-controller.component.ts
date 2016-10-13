@@ -1,38 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { HeadlineService } from '../headline.service';
 import { Headline } from '../shared/headline';
 
-const HEADLINES: Headline[] = [
-  {
-    title: 'Does banana help decrease blood pressure?',
-    views: 100,
-    holisticScore: 20
-  },
-  {
-    title: 'Who will be the next President?',
-    views: 51,
-    holisticScore: 32
-  },
-  {
-    title: 'HOT: Eating too much rice is not good!',
-    views: 12,
-    holisticScore: 10
-  },
-  {
-    title: 'Does an apple a day actually keep the doctors away?',
-    views: 32,
-    holisticScore: 75
-  },
-  {
-    title: 'Fruits that are good for teeth',
-    views: 47,
-    holisticScore: 95
-  },
-  {
-    title: 'All about Beyonce\'s new albulm',
-    views: 320,
-    holisticScore: 91
-  }
-];
+
 
 const FRIENDS = [
   {name: 'Khoi'},
@@ -49,11 +19,11 @@ const FRIENDS = [
   styleUrls: ['./galaxy-controller.component.css']
 })
 export class GalaxyControllerComponent implements OnInit {
-  headlinesList;
-  friendsList;
+  private headlinesList: Headline[];
+  private friendsList;
 
   onSelectHeadlines() {
-    this.headlinesList = HEADLINES;
+    this.getHeadlines();
     this.friendsList = null;
   }
 
@@ -62,12 +32,19 @@ export class GalaxyControllerComponent implements OnInit {
     this.headlinesList = null;
   }
 
-  constructor() {
-    this.headlinesList = HEADLINES;
+  // HELPER METHODS
+  getHeadlines() {
+    this.headlineService.getHeadlinesSlowly().then(headlines => this.headlinesList = headlines);
+  }
+
+  // ADMIN METHODS
+  constructor(private headlineService: HeadlineService) {
+    this.headlinesList = null;
     this.friendsList = null;
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.getHeadlines();
   }
 
 }

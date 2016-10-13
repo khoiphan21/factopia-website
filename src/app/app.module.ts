@@ -8,6 +8,8 @@ import { MainHeaderComponent } from './main-header/main-header.component';
 import { GalaxyDisplayComponent } from './galaxy-display/galaxy-display.component';
 import { GalaxyControllerComponent } from './galaxy-controller/galaxy-controller.component';
 import { GalaxyControllerDetailComponent } from './galaxy-controller-detail/galaxy-controller-detail.component';
+import { HeadlineService } from './headline.service';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,7 @@ import { GalaxyControllerDetailComponent } from './galaxy-controller-detail/gala
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [HeadlineService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
