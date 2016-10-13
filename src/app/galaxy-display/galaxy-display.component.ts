@@ -17,7 +17,7 @@ export class GalaxyDisplayComponent implements OnInit {
   private headlineService: HeadlineService;
 
   // CONSTANTS
-  MIN_DISTANCE = 300;
+  MIN_DISTANCE = 200;
 
   // The data of the headlines
   private headlines: Headline[];
@@ -55,23 +55,41 @@ export class GalaxyDisplayComponent implements OnInit {
   }
   randomizeCoordinates(amount: number) {
     for (let i = 0; i < amount; i++) {
-      this.randomCoordinates.push({
-        x: this.randomX(),
-        y: this.randomY()
-      });
-      this.checkDistanceBetweenCoordinates();
+      this.randomCoordinates.push(this.createRandomCoordinate());
     }
   }
-  checkDistanceBetweenCoordinates() {
-    for (let i = 0; i < this.randomCoordinates.length; i++) {
-      while (this.calculateMinDistance(i)) {
-        // Generate a new random coordinate at the given index
-        this.randomCoordinates[i] = {
-          x: this.randomX(),
-          y: this.randomY()
+  createRandomCoordinate(): Coordinate {
+    return {
+      x: this.randomX(),
+      y: this.randomY()
+    };
+  }
+  checkOverlappingPlanets() {
+    for (let i = 0; i < this.headlines.length; i++) {
+      let planet = null;
+      while (planet == null) {
+        planet = document.getElementById('planet-' + i);
+      }
+      console.log(planet);
+      for (let j = 0; j < this.headlines.length; j++) {
+        if (i !== j) {
+          let otherPlanet = document.getElementById('planet-' + j);
+          while (this.checkShapeOverlapping(
+            planet.getBoundingClientRect(),
+            otherPlanet.getBoundingClientRect()
+          )) {
+            // If true, there is an overlapping, so re-create the random coords
+            this.randomCoordinates[i] = this.createRandomCoordinate();
+          }
         }
       }
     }
+  }
+  checkShapeOverlapping(rect1: ClientRect, rect2: ClientRect): boolean {
+    return !(rect1.right < rect2.left ||
+                rect1.left > rect2.right ||
+                rect1.bottom < rect2.top ||
+                rect1.top > rect2.bottom);
   }
   calculateMinDistance(index: number): boolean {
     let givenCoordinate = this.randomCoordinates[index];
@@ -90,10 +108,12 @@ export class GalaxyDisplayComponent implements OnInit {
   }
 
   randomX(): number {
-    return (Math.random() * 800);
+    let display = document.getElementsByClassName('galaxy');
+    return (Math.random() * (display[0].getBoundingClientRect().width - 200));
   }
   randomY(): number {
-    return (Math.random() * 300);
+    let display = document.getElementsByClassName('galaxy');
+    return (Math.random() * (display[0].getBoundingClientRect().height - 200));
   }
 
   // Event method callback
@@ -135,7 +155,7 @@ export class GalaxyDisplayComponent implements OnInit {
         this.calculateMaxViews();
 
       }
-    );
+    )
   }
 
 }

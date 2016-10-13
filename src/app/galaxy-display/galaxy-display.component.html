@@ -4,6 +4,7 @@
     <!-- A headline Planet -->
     <li *ngFor="let headline of headlines; let i = index;" 
         class="planet"
+        [attr.id]="'planet-' + i"
         [style.left]="randomCoordinates[i].x + 'px'"
         [style.top]="randomCoordinates[i].y + 'px'"
         [style.width]="(200 * headline.views / maximumViews) + 'px'"
