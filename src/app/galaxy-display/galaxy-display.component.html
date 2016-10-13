@@ -7,6 +7,7 @@
     [style.width]="(200 * headline.views / maximumViews) + 'px'"
     [style.height]="(200 * headline.views / maximumViews) + 'px'"
     [class.selected]="headline == selectedHeadline"
+    [style.padding]="(headline == selectedHeadline) ? (20 * sizeMultiplier + 'px') : 0"
     (mouseover)="onPlanetHover(headline)"
     (mouseleave)="onPlanetUnhover()">
 

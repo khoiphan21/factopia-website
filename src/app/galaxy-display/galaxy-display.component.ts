@@ -19,6 +19,7 @@ export class GalaxyDisplayComponent implements OnInit {
 
   // Data to visualize headlines
   private maximumViews = 0;
+  private sizeMultiplier = 1;
 
   // HELPER METHODS
   calculateMaxViews() {
@@ -28,14 +29,27 @@ export class GalaxyDisplayComponent implements OnInit {
       }
     }
   }
+  calculateSizeMultiplier(max: number, given: number): Number {
+    if ((given / max) < 0.25) {
+      return 1.8;
+    } else if ((given / max) < 0.5) {
+      return 1.5;
+    } else if ((given / max) < 0.75) {
+      return 1.25;
+    } else {
+      return 1.1;
+    }
+  }
 
   // Event method callback
   onPlanetHover(headline: Headline) {
     this.selectedHeadline = headline;
+    this.sizeMultiplier = (Number) (this.calculateSizeMultiplier(this.maximumViews, headline.views));
     document.body.style.cursor = 'pointer';
   }
   onPlanetUnhover() {
     this.selectedHeadline = null;
+    this.sizeMultiplier = 1;
     document.body.style.cursor = 'auto';
   }
 
