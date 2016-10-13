@@ -1,0 +1,28 @@
+.galaxy-display {
+    color: #BCB2A1;
+}
+ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.planet {
+    display: block;
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+
+    transition: padding 0.5s;
+
+    /* Cool background gradient */
+    background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, #A3ADC2 0%, #474C55 100%, #272A2F 95%);
+	background-image: -webkit-radial-gradient(45px 45px, circle cover, #A3ADC2, #474C55);
+	background-image: radial-gradient(45px 45px 45deg, circle cover, #A3ADC2 0%, #474C55 100%, #272A2F 95%);
+}
+
+.selected {
+    padding: 10px;
+    box-shadow: 0px 0px 20px 10px rgba(200, 214, 240, 0.8);
+    transition: padding 0.5s;
+}

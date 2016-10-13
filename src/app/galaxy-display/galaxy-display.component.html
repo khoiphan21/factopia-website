@@ -1,3 +1,11 @@
 <div class="galaxy-display">
   <p *ngIf="selectedHeadline"> {{selectedHeadline.title}} </p>
+  <ul *ngIf="headlines">
+    <li *ngFor="let headline of headlines" 
+    class="planet"
+    [style.width]="(200 * headline.views / maximumViews) + 'px'"
+    [style.height]="(200 * headline.views / maximumViews) + 'px'"
+    [class.selected]="headline == selectedHeadline">
+    </li>
+  </ul>
 </div>

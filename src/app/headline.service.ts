@@ -32,7 +32,7 @@ export class HeadlineService {
   }
   getHeadlinesSlowly(): Promise<Headline[]> {
     return new Promise<Headline[]>(resolve =>
-    setTimeout(resolve, 2000))
+    setTimeout(resolve, 1000))
     .then(() => this.getHeadlines());
   } // with a delay
 
