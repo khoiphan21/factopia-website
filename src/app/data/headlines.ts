@@ -22,7 +22,7 @@ export const HEADLINES: Headline[] = [
     holisticScore: 75
   },
   {
-    title: 'Fruits that are good for teeth',
+    title: 'Fruits that are good for your teeth',
     views: 47,
     holisticScore: 95
   },
