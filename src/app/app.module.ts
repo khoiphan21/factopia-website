@@ -6,12 +6,16 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { MainHeaderComponent } from './main-header/main-header.component';
 import { GalaxyDisplayComponent } from './galaxy-display/galaxy-display.component';
+import { GalaxyControllerComponent } from './galaxy-controller/galaxy-controller.component';
+import { GalaxyControllerDetailComponent } from './galaxy-controller-detail/galaxy-controller-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainHeaderComponent,
-    GalaxyDisplayComponent
+    GalaxyDisplayComponent,
+    GalaxyControllerComponent,
+    GalaxyControllerDetailComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,28 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    height: 5vh;
+    background-color: #3C3933;
+}
+ul {
+    list-style-type: none;
+}
+.header li {
+    text-transform: uppercase;
+    flex: 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    color: #C9BEAC;
+}
+.header li:hover {
+    background-color: rgba(201, 190, 172, 0.2);
+    cursor: pointer;
+}
+.selected {
+    background-color: rgba(201, 190, 172, 0.1);
+}

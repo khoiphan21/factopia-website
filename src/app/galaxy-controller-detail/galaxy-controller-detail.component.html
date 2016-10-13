@@ -1,0 +1,11 @@
+<ul *ngIf="headlinesList">
+  <li *ngFor="let headline of headlinesList">
+    {{headline.title}}
+  </li>
+</ul>
+
+<ul *ngIf="friendsList">
+  <li *ngFor="let friend of friendsList">
+    {{friend.name}}
+  </li>
+</ul>

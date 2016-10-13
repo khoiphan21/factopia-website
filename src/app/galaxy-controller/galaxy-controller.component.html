@@ -1,0 +1,11 @@
+<ul class="header">
+  <li (click)="onSelectHeadlines()" [class.selected]="headlinesList">Headlines</li>
+  <li (click)="onSelectFriends()" [class.selected]="friendsList" >Friends</li>
+</ul>
+
+<div class="content">
+  <app-galaxy-controller-detail 
+  [headlinesList]="headlinesList" 
+  [friendsList]="friendsList">
+  </app-galaxy-controller-detail>
+</div>
