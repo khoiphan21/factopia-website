@@ -4,10 +4,15 @@
 ul {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
 }
 .planet {
-    display: block;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
     margin: 20px;
     width: 200px;
     height: 200px;
@@ -19,6 +24,27 @@ ul {
     background-image: -moz-radial-gradient(20% 20% 45deg, circle cover, #A3ADC2 0%, #474C55 100%, #272A2F 95%);
 	background-image: -webkit-radial-gradient(20% 20%, circle cover, #A3ADC2, #474C55);
 	background-image: radial-gradient(20% 20% 45deg, circle cover, #A3ADC2 0%, #474C55 100%, #272A2F 95%);
+}
+
+.planet-popup {
+    width: 110px;
+    border-radius: 10px;
+    padding: 10px;
+    color: #1C1A18;
+    
+    background-color: antiquewhite;
+}
+
+/* Temporarily not needed */
+.planet-option {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    right: 25%;
+    top: 25%;
+
+    background-color: antiquewhite;
+    
 }
 
 .selected {

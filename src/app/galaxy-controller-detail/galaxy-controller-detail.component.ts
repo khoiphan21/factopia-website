@@ -26,7 +26,11 @@ export class GalaxyControllerDetailComponent implements OnInit {
     this.selectedHeadline = headline;
 
     // Announce the change in headline selected
-    this.headlineService.annouceHeadlineSelected(headline);
+    this.headlineService.annouceHeadlineHovered(headline);
+  }
+  onDeselectHeadline() {
+    this.selectedHeadline = null;
+    this.headlineService.annouceHeadlineHovered(null);
   }
 
   constructor(headlineService: HeadlineService) {

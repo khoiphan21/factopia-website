@@ -1,6 +1,7 @@
 <ul *ngIf="headlinesList">
   <li *ngFor="let headline of headlinesList" 
-  (mouseover)="onSelectHeadline(headline)">
+  (mouseover)="onSelectHeadline(headline)"
+  (mouseleave)="onDeselectHeadline()">
     {{headline.title}}
   </li>
 </ul>

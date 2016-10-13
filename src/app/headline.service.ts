@@ -9,12 +9,12 @@ export class HeadlineService {
   private selectedHeadline: Headline;
 
   // Observable headline sources
-  private headlineAnnouncementSource = new Subject<Headline>();
+  private headlineHoverAnnouncementSource = new Subject<Headline>();
   // Observable headline streams
-  headlineChanged$ = this.headlineAnnouncementSource.asObservable();
+  headlineHoverChanged$ = this.headlineHoverAnnouncementSource.asObservable();
   // Method called when a headline is selected
-  annouceHeadlineSelected(headline: Headline) {
-    this.headlineAnnouncementSource.next(headline);
+  annouceHeadlineHovered(headline: Headline) {
+    this.headlineHoverAnnouncementSource.next(headline);
   }
 
 
