@@ -6,14 +6,23 @@
 }
 
 .header {
-    background-color: #1F1D1A;
+    background-color: #1C1A18;
     flex-basis: 8%;
 }
 .content {
+    display: flex;
+    flex-direction: row;
     flex-grow: 2;
     margin: 0px;
     flex-basis: 77%;
     background-color: #1F1D1A;
+}
+.content .galaxy {
+    width: 80%;
+}
+.content .right-sidebar {
+    width: 20%;
+    background-color: rgba(188, 178, 161, 0.5);
 }
 .footer {
     flex-grow: 1;
