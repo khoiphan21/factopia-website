@@ -2,13 +2,14 @@
     color: #BCB2A1;
 }
 ul {
-    display: flex;
+    position: relative;
+    /*display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap;*/
 }
 .planet {
-    position: relative;
+    position: absolute;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;

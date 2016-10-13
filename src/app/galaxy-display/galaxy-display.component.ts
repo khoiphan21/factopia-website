@@ -2,13 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { HeadlineService } from '../headline.service';
 import { Headline } from '../shared/headline';
 
+export class Coordinate {
+  x: number;
+  y: number;
+}
+
 @Component({
   selector: 'app-galaxy-display',
   templateUrl: './galaxy-display.component.html',
   styleUrls: ['./galaxy-display.component.css']
 })
 export class GalaxyDisplayComponent implements OnInit {
+  // Services
   private headlineService: HeadlineService;
+
+  // CONSTANTS
+  MIN_DISTANCE = 300;
+
   // The data of the headlines
   private headlines: Headline[];
   private selectedHeadline: Headline;
@@ -20,6 +30,9 @@ export class GalaxyDisplayComponent implements OnInit {
   // Data to visualize headlines
   private maximumViews = 0;
   private sizeMultiplier = 1;
+
+  // TEMPORARY VARIABLE: HOLD RANDOM COORDINATES
+  private randomCoordinates: Coordinate[] = [];
 
   // HELPER METHODS
   calculateMaxViews() {
@@ -39,6 +52,48 @@ export class GalaxyDisplayComponent implements OnInit {
     } else {
       return 1.1;
     }
+  }
+  randomizeCoordinates(amount: number) {
+    for (let i = 0; i < amount; i++) {
+      this.randomCoordinates.push({
+        x: this.randomX(),
+        y: this.randomY()
+      });
+      this.checkDistanceBetweenCoordinates();
+    }
+  }
+  checkDistanceBetweenCoordinates() {
+    for (let i = 0; i < this.randomCoordinates.length; i++) {
+      while (this.calculateMinDistance(i)) {
+        // Generate a new random coordinate at the given index
+        this.randomCoordinates[i] = {
+          x: this.randomX(),
+          y: this.randomY()
+        }
+      }
+    }
+  }
+  calculateMinDistance(index: number): boolean {
+    let givenCoordinate = this.randomCoordinates[index];
+    for (let i = 0; i < this.randomCoordinates.length; i++) {
+      if (i !== index) {
+        if (Math.sqrt(
+        Math.pow(givenCoordinate.x - this.randomCoordinates[i].x, 2)
+        +
+        Math.pow(givenCoordinate.y - this.randomCoordinates[i].y, 2)
+        ) < this.MIN_DISTANCE) {
+          // distance is too close
+          return false;
+        }
+      }
+    }
+  }
+
+  randomX(): number {
+    return (Math.random() * 800);
+  }
+  randomY(): number {
+    return (Math.random() * 300);
   }
 
   // Event method callback
@@ -69,12 +124,16 @@ export class GalaxyDisplayComponent implements OnInit {
     // Get the headlines from the HeadlineService
     this.headlineService.getHeadlinesSlowly().then(
       headlines => {
-        this.headlines = headlines;
-        this.calculateMaxViews();
+        this.randomizeCoordinates(headlines.length);
 
         // Set which option to show
         this.planetOption = true;
         this.friendOption = false;
+
+        // Things will start to get rendered when this is called
+        this.headlines = headlines;
+        this.calculateMaxViews();
+
       }
     );
   }
