@@ -13,6 +13,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { ExplorePageComponent } from './explore-page/explore-page.component';
 
 import { AppRoutingModule }  from './app-routing.module';
+import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { AppRoutingModule }  from './app-routing.module';
     GalaxyControllerDetailComponent,
     HomePageComponent,
     ExplorePageComponent,
+    WelcomePageComponent,
   ],
   imports: [
     BrowserModule,

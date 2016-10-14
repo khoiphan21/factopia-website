@@ -46,8 +46,13 @@ ul li{
     width: 150px;
     color: #C9C8C3;
     text-transform: uppercase;
+    transition: background-color 0.3s;
 }
 ul li:hover {
-    background-color: #3C3933;
+    transition: background-color 0.3s;
+    background-color: #47443D;
     cursor: pointer;
+}
+.selected {
+    background-color: rgba(71, 68, 61, 0.5);
 }

@@ -3,10 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HomePageComponent }   from './home-page/home-page.component';
 import { ExplorePageComponent } from './explore-page/explore-page.component';
-
+import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/welcome', pathMatch: 'full'},
+  { path: 'welcome', component: WelcomePageComponent },
   { path: 'home',  component: HomePageComponent },
   { path: 'explore', component: ExplorePageComponent}
 ];
