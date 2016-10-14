@@ -7,18 +7,25 @@
 }
 
 .logo {
+    padding-left: 30px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     height: 100%;
-    width: 200px;
-    text-align: center;
+    width: 300px;
+    text-align: left;
     align-self: flex-start;
-    color: #C9BEAC;
+    color: #C9C8C3;
     text-transform: uppercase;
 }
 .logo:hover {
     cursor: pointer;
+}
+.main-logo {
+    font-size: 2em;
+}
+.slogan {
+    font-size: 1em;
 }
 
 nav {
@@ -37,7 +44,7 @@ ul li{
     justify-content: center;
     text-align: center;
     width: 150px;
-    color: #C9BEAC;
+    color: #C9C8C3;
     text-transform: uppercase;
 }
 ul li:hover {
