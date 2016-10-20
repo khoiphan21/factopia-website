@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HeadlineService } from '../headline.service';
 import { Headline } from '../shared/headline';
 
+import { ARTICLES } from '../data/articles';
+
 export class Coordinate {
   x: number;
   y: number;
@@ -19,9 +21,13 @@ export class GalaxyDisplayComponent implements OnInit {
   // CONSTANTS
   MIN_DISTANCE = 200;
 
+  // TODO: REMOVE THIS
   // The data of the headlines
   private headlines: Headline[];
   private selectedHeadline: Headline;
+
+  // The data of the article
+  private article = ARTICLES[0];
 
   // Variable to control which planet option to display
   private friendOption = false;

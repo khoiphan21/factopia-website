@@ -1,0 +1,24 @@
+<article class="wrapper">
+
+  <section class="main">
+    <div class="article-content">
+      <span class="article-photo"></span>
+      <span class="article-title">{{article.content.title}}</span>
+    </div>
+    <div class="buttons">
+      <button>Share</button>
+      <button (click)="showMessage()">messages</button>
+    </div>
+  </section>
+
+  <section class="message" *ngIf="isMessageShown">
+    <section class="friend-list"></section>
+    <section class="message-content">
+      {{article.friendMessages[0].content}}
+    </section>
+    
+  </section>
+
+</article>
+
+

@@ -14,14 +14,11 @@
         (mouseover)="onPlanetHover(headline)"
         (mouseleave)="onPlanetUnhover()">
 
-      <div *ngIf="planetOption">
-        <p class="planet-popup" *ngIf="headline == selectedHeadline">{{headline.title}}</p>
-      </div>
+      <app-planet-overview
+        *ngIf="headline == selectedHeadline"
+        [article]="article">
+      </app-planet-overview>
 
-      <div *ngIf="friendOption">
-        <div class="friend-option"></div>
-        <p class="friend-popup"></p>
-      </div>
 
     </li>
 

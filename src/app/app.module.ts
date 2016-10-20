@@ -9,11 +9,14 @@ import { GalaxyDisplayComponent } from './galaxy-display/galaxy-display.componen
 import { GalaxyControllerComponent } from './galaxy-controller/galaxy-controller.component';
 import { GalaxyControllerDetailComponent } from './galaxy-controller-detail/galaxy-controller-detail.component';
 import { HeadlineService } from './headline.service';
+import { ArticleService } from './article.service';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ExplorePageComponent } from './explore-page/explore-page.component';
 
 import { AppRoutingModule }  from './app-routing.module';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { ArticlePageComponent } from './article-page/article-page.component';
+import { PlanetOverviewComponent } from './planet-overview/planet-overview.component';
 
 
 @NgModule({
@@ -26,6 +29,8 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
     HomePageComponent,
     ExplorePageComponent,
     WelcomePageComponent,
+    ArticlePageComponent,
+    PlanetOverviewComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +38,10 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [HeadlineService],
+  providers: [
+    HeadlineService,
+    ArticleService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
