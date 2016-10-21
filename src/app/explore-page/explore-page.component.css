@@ -36,10 +36,10 @@
 }
 .content .right-sidebar {
     width: 25%;
-    background-color: rgba(188, 178, 161, 0.5);
+    background-color: #9A9DA4;
 }
 .footer {
     flex-grow: 1;
     height: 10vh;
-    background-color: #3C3933;
+    background-color: #414B63;
 }

@@ -5,7 +5,7 @@ ul {
 ul li {
     padding: 10px 20px 10px 20px;
     margin: 0px 5px 5px 5px;
-    background-color: #BCB2A1;
+    background-color: #E3E6F1;
     box-shadow: 2px 2px 1px 1px #1F1D1A;
     transition: padding 0.3s, font-size 0.3s;
 }
@@ -14,5 +14,5 @@ ul li:hover {
     padding: 25px 20px 25px 20px;
     font-size: 1.1em;
     transition: padding 0.3s, font-size 0.3s;
-    background-color: #C9BEAC;
+    background-color: #EEF1FC;
 }
