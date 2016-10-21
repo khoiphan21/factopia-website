@@ -20,7 +20,6 @@ export class PlanetOverviewComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
   }
 
 }

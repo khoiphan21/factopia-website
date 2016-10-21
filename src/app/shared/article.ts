@@ -12,8 +12,6 @@ export class Article {
     holisticScore: number;
     author: User;
 
-    friendMessages: Message[];
-
     constructor(id: number) {
         this.id = id;
     }

@@ -7,14 +7,14 @@
     </div>
     <div class="buttons">
       <button>Share</button>
-      <button (click)="showMessage()">messages</button>
+      <button (click)="showMessage()">Messages</button>
     </div>
   </section>
 
   <section class="message" *ngIf="isMessageShown">
     <section class="friend-list"></section>
     <section class="message-content">
-      {{article.friendMessages[0].content}}
+      
     </section>
     
   </section>
