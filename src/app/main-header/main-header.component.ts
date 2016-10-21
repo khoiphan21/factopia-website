@@ -10,11 +10,6 @@ export class MainHeaderComponent implements OnInit {
   homeSelected: boolean;
   @Input()
   exploreSelected: boolean;
-  @Input()
-  friendSelected: boolean;
-  @Input()
-  headlineSelected: boolean;
-
 
   constructor() { }
 

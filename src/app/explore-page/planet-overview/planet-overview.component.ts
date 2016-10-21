@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Article } from '../shared/article';
+import { Article } from '../../shared/article';
 
 @Component({
   selector: 'app-planet-overview',

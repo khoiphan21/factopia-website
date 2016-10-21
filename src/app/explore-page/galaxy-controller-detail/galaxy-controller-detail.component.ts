@@ -1,6 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Headline } from '../shared/headline';
-import { HeadlineService } from '../headline.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { Headline } from '../../shared/headline';
+import { HeadlineService } from '../../headline.service';
 
 
 @Component({

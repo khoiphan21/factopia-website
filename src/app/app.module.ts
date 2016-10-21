@@ -5,19 +5,20 @@ import { HttpModule }        from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { MainHeaderComponent } from './main-header/main-header.component';
-import { GalaxyDisplayComponent } from './galaxy-display/galaxy-display.component';
-import { GalaxyControllerComponent } from './galaxy-controller/galaxy-controller.component';
-import { GalaxyControllerDetailComponent } from './galaxy-controller-detail/galaxy-controller-detail.component';
+
 import { HeadlineService } from './headline.service';
 import { ArticleService } from './article.service';
 import { HomePageComponent } from './home-page/home-page.component';
-import { ExplorePageComponent } from './explore-page/explore-page.component';
-
-import { AppRoutingModule }  from './app-routing.module';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { ArticlePageComponent } from './article-page/article-page.component';
-import { PlanetOverviewComponent } from './planet-overview/planet-overview.component';
 
+import { ExplorePageComponent } from './explore-page/explore-page.component';
+import { GalaxyDisplayComponent } from './explore-page/galaxy-display/galaxy-display.component';
+import { GalaxyControllerComponent } from './explore-page/galaxy-controller/galaxy-controller.component';
+import { GalaxyControllerDetailComponent } from './explore-page/galaxy-controller-detail/galaxy-controller-detail.component';
+import { PlanetOverviewComponent } from './explore-page/planet-overview/planet-overview.component';
+
+import { AppRoutingModule }  from './app-routing.module';
 
 @NgModule({
   declarations: [

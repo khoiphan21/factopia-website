@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HeadlineService } from '../headline.service';
-import { Headline } from '../shared/headline';
+import { HeadlineService } from '../../headline.service';
+import { Headline } from '../../shared/headline';
 
-import { ARTICLES } from '../data/articles';
+import { ARTICLES } from '../../data/articles';
 
 export class Coordinate {
   x: number;

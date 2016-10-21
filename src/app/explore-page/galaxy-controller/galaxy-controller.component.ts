@@ -1,17 +1,6 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { HeadlineService } from '../headline.service';
-import { Headline } from '../shared/headline';
-
-
-
-const FRIENDS = [
-  {name: 'Khoi'},
-  {name: 'Nhan'},
-  {name: 'Soobin'},
-  {name: 'Bella'},
-  {name: 'Vicky'},
-  {name: 'Jack'},
-]
+import { Component, OnInit } from '@angular/core';
+import { HeadlineService } from '../../headline.service';
+import { Headline } from '../../shared/headline';
 
 @Component({
   selector: 'app-galaxy-controller',
@@ -20,15 +9,9 @@ const FRIENDS = [
 })
 export class GalaxyControllerComponent implements OnInit {
   private headlinesList: Headline[];
-  private friendsList;
 
   onSelectHeadlines() {
     this.getHeadlines();
-    this.friendsList = null;
-  }
-  onSelectFriends() {
-    this.friendsList = FRIENDS;
-    this.headlinesList = null;
   }
 
   // HELPER METHODS
@@ -39,7 +22,6 @@ export class GalaxyControllerComponent implements OnInit {
   // ADMIN METHODS
   constructor(private headlineService: HeadlineService) {
     this.headlinesList = null;
-    this.friendsList = null;
   }
 
   ngOnInit(): void {
